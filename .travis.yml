@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 10.5.0
+before_deploy:
+  - npm run build
+deploy:
+  provider: npm
+  email: jirat@rentspree.com
+  on:
+    tags: true
+  api_key:
+    secure: n0Bbug7YK9WXmlODCiceUHYmChq5OHuqRff2IHg5qQ8Sos8x8KzWoT80tJBPFzCTojCwbclxIfGn29M2XgRkWS3gKoV2kDRSL2DIRiFaMXrg+Q18vsCTW9HbbhsCv0Z+mCqL+lZfy7vsHPvpWAa1NgXbNgcMjYP5rGQpz21VDMcDwI8RhOPI6ByPHwBKyrPkp0ftG82yp2+nXjaupFgR3hFQwDGigmYMMlwopVkr4MMA6q5y4cacU6+dlzAfDuD5h5FIJm2eMXP5iwB2yznpLlOtYKIQ/8uUQcSBqAvs8b8Pmus/5l8qEnxRSxaSdwJf17YTFrAsakUbgDwaC5+T28lnpiKHfRHPBtfcM3doT9fFIZYpxphM/WpIBqH1ZzlbcI3W8Z58FS7S35i7+m5sMT/QVIsVw8oXAbU00qgP2j4addNQyApIdb67cypm0u1wf+sQ0DtPZLonyzHahdtimPMmJnrVh0+J+rVYns7j+oJinAwJMyYZsG3qI5ruLC9dF/lwwECIKDp7OmXU11TTbRYxS/o5iQGicS+kQ0T8zcPvGMEmN4paJg11/F0oMoGniX+NDf04N2Xb75AfQEtPw2A9sh9//jqlnE/e/o6Gg7n0K2ReZAL/9ZC/246G34nnNRb5Mp62uEhGZal9s4Jl72jXEYz8wr+QrPvQcw/Soz0=
