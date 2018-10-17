@@ -98,12 +98,12 @@ export function removeLocalItem(localStorageName, op = {}) {
  * @export
  * @param {string} prefix Prefix of the cookie's name to remove
  */
-export function removeAllLocalItem(prefix) {
+export function removeAllLocalItem(prefix, op) {
   const storageName = cookies.getAll()
   Object.keys(storageName).forEach(function (key) {
     const regex = new RegExp("^" + prefix + ".*", 'i')
     if (regex.test(key)) {
-      removeLocalItem(key)
+      removeLocalItem(key, op)
     }
   })
 }

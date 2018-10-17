@@ -125,12 +125,12 @@ function removeLocalItem(localStorageName) {
  * @export
  * @param {string} prefix Prefix of the cookie's name to remove
  */
-function removeAllLocalItem(prefix) {
+function removeAllLocalItem(prefix, op) {
   var storageName = cookies.getAll();
   Object.keys(storageName).forEach(function (key) {
     var regex = new RegExp("^" + prefix + ".*", 'i');
     if (regex.test(key)) {
-      removeLocalItem(key);
+      removeLocalItem(key, op);
     }
   });
 }
