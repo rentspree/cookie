@@ -1,6 +1,6 @@
 {
   "name": "@rentspree/cookie",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cookie library for Rentspree's projects",
   "main": "build/index.js",
   "scripts": {
