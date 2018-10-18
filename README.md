@@ -4,6 +4,14 @@
 
 npm install rentspree/cookie
 
+## Update a newer version
+
+run
+
+```bash
+npm version patch
+```
+
 ### Table of Contents
 
 - [setOption][1]
