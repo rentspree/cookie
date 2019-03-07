@@ -2,7 +2,7 @@
 
 ## Installation
 
-npm install rentspree/cookie
+npm install @rentspree/cookie
 
 ## Update a newer version
 
