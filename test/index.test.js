@@ -94,15 +94,17 @@ describe("Cookie Utility", () => {
 
   context("removeAllLocalItem", () => {
     it("should be able to remove all cookies that have \"woah\" at the start of their name", () => {
-      const cookieName = "noWoahTestGet"
-      const cookieValue = "test-get-cookie"
-      CookieUtils.setLocalItem(cookieName, cookieValue)
+      const cookieName = ["noWoahTestGet", "woahTestGet"]
+      const cookieValue = ["test-get-cookie", "get-cookie-test"]
+      for (let i = 0; i < 2; i += 1) {
+        CookieUtils.setLocalItem(cookieName[i], cookieValue[i])
+      }
 
       CookieUtils.removeAllLocalItem("woah")
       const allCookies = CookieUtils.getAllLocalItem()
 
       Object.entries(allCookies).length.should.equal(1)
-      allCookies.hasOwnProperty(cookieName).should.be.true
+      allCookies.hasOwnProperty(cookieName[0]).should.be.true
     })
   })
 })
