@@ -82,14 +82,9 @@ export function getAllLocalItem(op = {}) {
  * @param {string} localStorageName Cookie's name
  * @param {Object} [options={}] Cookie's options
  */
-export function removeLocalItem(localStorageName, op = {}) {
+export function removeLocalItem(localStorageName) {
   // REMOVE ITEM FROM COOKIE
-  const sentOptions = _.merge({
-      path: "/"
-    },
-    op
-  )
-  cookies.remove(localStorageName, sentOptions)
+  cookies.remove(localStorageName, options)
 }
 
 /**
@@ -98,12 +93,12 @@ export function removeLocalItem(localStorageName, op = {}) {
  * @export
  * @param {string} prefix Prefix of the cookie's name to remove
  */
-export function removeAllLocalItem(prefix, op) {
+export function removeAllLocalItem(prefix) {
   const storageName = cookies.getAll()
   Object.keys(storageName).forEach(function (key) {
     const regex = new RegExp("^" + prefix + ".*", 'i')
     if (regex.test(key)) {
-      removeLocalItem(key, op)
+      removeLocalItem(key)
     }
   })
 }
