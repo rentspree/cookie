@@ -110,13 +110,8 @@ function getAllLocalItem() {
  * @param {Object} [options={}] Cookie's options
  */
 function removeLocalItem(localStorageName) {
-  var op = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
   // REMOVE ITEM FROM COOKIE
-  var sentOptions = _lodash2.default.merge({
-    path: "/"
-  }, op);
-  cookies.remove(localStorageName, sentOptions);
+  cookies.remove(localStorageName, options);
 }
 
 /**
@@ -125,12 +120,12 @@ function removeLocalItem(localStorageName) {
  * @export
  * @param {string} prefix Prefix of the cookie's name to remove
  */
-function removeAllLocalItem(prefix, op) {
+function removeAllLocalItem(prefix) {
   var storageName = cookies.getAll();
   Object.keys(storageName).forEach(function (key) {
     var regex = new RegExp("^" + prefix + ".*", 'i');
     if (regex.test(key)) {
-      removeLocalItem(key, op);
+      removeLocalItem(key);
     }
   });
 }
