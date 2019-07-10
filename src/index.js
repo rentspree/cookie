@@ -1,5 +1,5 @@
 import Cookies from "universal-cookie"
-import _ from "lodash"
+import merge from "lodash.merge"
 
 let options = {}
 const cookies = new Cookies()
@@ -11,7 +11,7 @@ const cookies = new Cookies()
  * @param {Object} [options={}]
  */
 export function setOption(op = {}) {
-  options = _.merge(options, op)
+  options = merge(options, op)
 }
 
 /**

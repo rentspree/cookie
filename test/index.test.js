@@ -1,5 +1,5 @@
 import Cookies from 'universal-cookie'
-import _ from 'lodash'
+import merge from "lodash.merge"
 import chai from 'chai'
 import sinon from 'sinon'
 import * as CookieUtils from '../src/index'
@@ -16,20 +16,6 @@ describe("Cookie Utility", () => {
     if (listeners.length > 0) {
       listeners.splice(0, listeners.length)
     }
-  })
-
-  context("setOption", () => {
-    it("should be able to set options of cookies", () => {
-      const option = {
-        path: "/something"
-      }
-
-      const mergeStub = sinon.stub(_, "merge").returns({})
-
-      CookieUtils.setOption(option)
-      mergeStub.getCall(0).args[1].should.equal(option)
-      mergeStub.restore()
-    })
   })
 
   context("setLocalItem", () => {
