@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "rimraf build/** && babel src/ -d build -s",
-    "test": "node_modules/.bin/mocha --require babel-core/register"
+    "test": "node_modules/.bin/mocha --require babel-core/register",
+    "prepublish": "npm run build"
   },
   "author": "Jirat Boondam <jirat@rentspree.com>",
   "license": "MIT",
